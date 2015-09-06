@@ -1,4 +1,5 @@
 # wix-grunt-sass
+<<<<<<< HEAD
 
 > compile scss/sass files into css
 
@@ -90,3 +91,5 @@ _(Nothing yet)_
 
 ## License
 Copyright (c) 2015 Yaron Nachshon. Licensed under the MIT license.
+=======
+>>>>>>> 78426eb99000e88fe409708228aa7a1fd9c742b3
