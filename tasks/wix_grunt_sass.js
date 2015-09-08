@@ -28,8 +28,8 @@ module.exports = function (grunt) {
     });
     var execPath = fs.realpathSync(process.execPath);
     cmd = template('./node_modules/node-sass/bin/node-sass  ${sassDir} -o ${cssDir} ${importPath}', {
-      sassDir: '.tmp/styles/' ||options.sassDir,
-      cssDir: 'app/styles/' || options.cssDir,
+      sassDir: options.sassDir,
+      cssDir: options.cssDir,
       importPath: importPathCmd
     });
 
