@@ -27,7 +27,7 @@ module.exports = function (grunt) {
       importPathCmd += '--include-path ' + path + ' ';
     });
     var execPath = fs.realpathSync(process.execPath);
-    cmd = template('./node_modules/node-sass/bin/node-sass  ${sassDir} -o ${cssDir} ${importPath}', {
+    cmd = template('./node_modules/wix-grunt-sass/node_modules/node-sass/bin/node-sass  ${sassDir} -o ${cssDir} ${importPath}', {
       sassDir: options.sassDir,
       cssDir: options.cssDir,
       importPath: importPathCmd
