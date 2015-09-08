@@ -13,6 +13,7 @@ module.exports = function (grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
   grunt.registerTask('wixGruntSass', 'compile scss/sass files into css', function () {
+    console.log('********************* wixGruntSass *******************');
     var template = require('es6-template-strings');
     var fs = require('fs');
     var options = this.options();
@@ -25,15 +26,14 @@ module.exports = function (grunt) {
     options.importPath.forEach(function (path) {
       importPathCmd += '--include-path ' + path + ' ';
     });
-
-    importPathCmd = options.importPath;
-
     var execPath = fs.realpathSync(process.execPath);
     cmd = template('./node_modules/node-sass/bin/node-sass  ${sassDir} -o ${cssDir} ${importPath}', {
-      sassDir: options.sassDir,
-      cssDir: options.cssDir,
+      sassDir: '.tmp/styles/' ||options.sassDir,
+      cssDir: 'app/styles/' || options.cssDir,
       importPath: importPathCmd
     });
+
+    console.log(cmd);
 
     done = this.async();
     // done(true);
